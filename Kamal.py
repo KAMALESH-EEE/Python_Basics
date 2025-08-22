@@ -1,27 +1,42 @@
-List_passanger = []
-
 class Pass:
-    global List_passanger
+    List_passanger = []
+    ID = 1
 
-    def __init__(self,ID,Name):
-
-        self.ID = ID
+    def __init__(self):
+        Name = input('Enter Name: ')
+        self.ID = Pass.ID
+        Pass.ID+= 1
         self.Name = Name
+        Pass.List_passanger.append(self)
+        print('Your ID:',self.ID)
 
-        List_passanger.append(self)
+    def Details():
 
-appID = 1
-P = 'p'+"1"
+        for i in Pass.List_passanger:
+            print('ID: ',i.ID,'Name: ',i.Name)
+    
+    def Get_Obj():
+        ID = int(input('Enter Your ID: '))
+        for obj in Pass.List_passanger:
+            if obj.ID == ID:
+                return obj
 
 
-try:
-    for passanger in List_passanger:
-        if passanger.ID == appID:
-            P=passanger
-        break
-except:
-    pass
-print(P.Name)
 
+
+def Rename():
+    for obj in Pass.List_passanger:
+        if obj.ID == ID:
+            obj.Name = input('Enter new Name: ')
+i =0
+while i!=3:
+    obj = Pass()
+    i+=1
+
+ID = int(input('Enter ID'))
+
+Rename()
+
+Pass.Details()
 
 
