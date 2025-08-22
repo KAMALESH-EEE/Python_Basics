@@ -62,22 +62,3 @@ def deletion(head,target) :
         prev=cur
         cur = cur.next
     return dum.next
-
-def insert(head,pos,elem):
-
-    cur = head
-    k=0
-    while cur :
-        if k == pos :
-            t = cur
-            cur.next= singnode(elem)
-            cur.next.next=t.next
-        cur=cur.next
-        k +=1
-
-    return head
-
-print(traverse(insert(head1,3,3)))
-
-    
-
