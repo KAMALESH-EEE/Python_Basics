@@ -1,22 +1,21 @@
-class singnode :
-    def __init__(self,val=None,next=None):
+class singnode :  
+    head = None
+    tail = None
+    def __init__(self,val=None):
         self.val = val
-        self.next=next
+        self.next=None
+        if singnode.head == None :
+            singnode.head = self
+            singnode.tail = self
+        else :
+            singnode.tail.next = self 
+            singnode.tail = self
 
-head1 = singnode(1)
-a=singnode(2)
-b=singnode(3)
-c=singnode(4)
-d=singnode(5)
+i=1
+while i < 6:
+    obj = singnode(i)
+    i += 1
 
-head1.next = a
-a.next = b
-b.next = c
-c.next = d
-
-head2 = singnode(6)
-A=singnode(7)
-head2.next = A
 
 def traverse (head) :
     cur = head 
@@ -62,3 +61,5 @@ def deletion(head,target) :
         prev=cur
         cur = cur.next
     return dum.next
+
+print(traverse(singnode.head))
